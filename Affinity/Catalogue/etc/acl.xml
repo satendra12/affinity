@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Affinity_Catalogue::Catalogue" sortOrder="10" title="Catalogue">
+					<resource id="Affinity_Catalogue::Catalogue_save" sortOrder="10" title="Save Catalogue"/>
+					<resource id="Affinity_Catalogue::Catalogue_delete" sortOrder="20" title="Delete Catalogue"/>
+					<resource id="Affinity_Catalogue::Catalogue_update" sortOrder="30" title="Update Catalogue"/>
+					<resource id="Affinity_Catalogue::Catalogue_view" sortOrder="40" title="View Catalogue"/>
+				</resource>
+				<resource id="Affinity_Catalogue::Cataloguecatagory" sortOrder="10" title="Cataloguecatagory">
+					<resource id="Affinity_Catalogue::Cataloguecatagory_save" sortOrder="10" title="Save Cataloguecatagory"/>
+					<resource id="Affinity_Catalogue::Cataloguecatagory_delete" sortOrder="20" title="Delete Cataloguecatagory"/>
+					<resource id="Affinity_Catalogue::Cataloguecatagory_update" sortOrder="30" title="Update Cataloguecatagory"/>
+					<resource id="Affinity_Catalogue::Cataloguecatagory_view" sortOrder="40" title="View Cataloguecatagory"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

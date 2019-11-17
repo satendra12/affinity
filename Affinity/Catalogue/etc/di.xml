@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Affinity\Catalogue\Api\CatalogueRepositoryInterface" type="Affinity\Catalogue\Model\CatalogueRepository"/>
+	<preference for="Affinity\Catalogue\Api\Data\CatalogueInterface" type="Affinity\Catalogue\Model\Data\Catalogue"/>
+	<preference for="Affinity\Catalogue\Api\Data\CatalogueSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Affinity\Catalogue\Model\ResourceModel\Catalogue\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">affinity_catalogue_catalogue</argument>
+			<argument name="resourceModel" xsi:type="string">Affinity\Catalogue\Model\ResourceModel\Catalogue\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="affinity_catalogue_catalogue_listing_data_source" xsi:type="string">Affinity\Catalogue\Model\ResourceModel\Catalogue\Grid\Collection</item>
+				<item name="affinity_catalogue_cataloguecatagory_listing_data_source" xsi:type="string">Affinity\Catalogue\Model\ResourceModel\Cataloguecatagory\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" type="Affinity\Catalogue\Model\CataloguecatagoryRepository"/>
+	<preference for="Affinity\Catalogue\Api\Data\CataloguecatagoryInterface" type="Affinity\Catalogue\Model\Data\Cataloguecatagory"/>
+	<preference for="Affinity\Catalogue\Api\Data\CataloguecatagorySearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Affinity\Catalogue\Model\ResourceModel\Cataloguecatagory\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">affinity_catalogue_cataloguecatagory</argument>
+			<argument name="resourceModel" xsi:type="string">Affinity\Catalogue\Model\ResourceModel\Cataloguecatagory\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Affinity\Catalogue\CatalogueImageUpload" type="Affinity\Catalogue\Model\ImageUploader">
+		<arguments>
+			<argument name="baseTmpPath" xsi:type="string">affinity/tmp</argument>
+			<argument name="basePath" xsi:type="string">affinity/catalogue</argument>
+			<argument name="allowedExtensions" xsi:type="array">
+				<item name="jpg" xsi:type="string">jpg</item>
+				<item name="jpeg" xsi:type="string">jpeg</item>
+				<item name="gif" xsi:type="string">gif</item>
+				<item name="png" xsi:type="string">png</item>
+			</argument>
+		</arguments>
+	</virtualType>
+	<type name="Affinity\Catalogue\Controller\Adminhtml\Cataloguecatagory\Uploadimage">
+		<arguments>
+			<argument name="imageUploader" xsi:type="object">Affinity\Catalogue\CatalogueImageUpload</argument>
+		</arguments>
+	</type>
+</config>

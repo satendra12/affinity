@@ -1,0 +1,26 @@
+{
+    "name": "affinity/module-catalogue",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "satendra.tyagi1986@gmail.com",
+            "name": "satendra tyagi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Affinity\\Catalogue\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

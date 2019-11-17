@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route method="POST" url="/V1/affinity-catalogue/catalogue">
+		<service class="Affinity\Catalogue\Api\CatalogueRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Catalogue_save"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affinity-catalogue/catalogue/search">
+		<service class="Affinity\Catalogue\Api\CatalogueRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Catalogue_view"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affinity-catalogue/catalogue/:catalogueId">
+		<service class="Affinity\Catalogue\Api\CatalogueRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Catalogue_view"/>
+		</resources>
+	</route>
+	<route method="PUT" url="/V1/affinity-catalogue/catalogue/:catalogueId">
+		<service class="Affinity\Catalogue\Api\CatalogueRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Catalogue_update"/>
+		</resources>
+	</route>
+	<route method="DELETE" url="/V1/affinity-catalogue/catalogue/:catalogueId">
+		<service class="Affinity\Catalogue\Api\CatalogueRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Catalogue_delete"/>
+		</resources>
+	</route>
+	<route method="POST" url="/V1/affinity-catalogue/cataloguecatagory">
+		<service class="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Cataloguecatagory_save"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affinity-catalogue/cataloguecatagory/search">
+		<service class="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Cataloguecatagory_view"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affinity-catalogue/cataloguecatagory/:cataloguecatagoryId">
+		<service class="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Cataloguecatagory_view"/>
+		</resources>
+	</route>
+	<route method="PUT" url="/V1/affinity-catalogue/cataloguecatagory/:cataloguecatagoryId">
+		<service class="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Cataloguecatagory_update"/>
+		</resources>
+	</route>
+	<route method="DELETE" url="/V1/affinity-catalogue/cataloguecatagory/:cataloguecatagoryId">
+		<service class="Affinity\Catalogue\Api\CataloguecatagoryRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Affinity_Catalogue::Cataloguecatagory_delete"/>
+		</resources>
+	</route>
+</routes>

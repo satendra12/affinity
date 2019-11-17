@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table comment="affinity_catalogue_catalogue Table" engine="innodb" name="affinity_catalogue_catalogue" resource="default">
+		<column comment="Entity Id" identity="true" name="catalogue_id" nullable="false" padding="6" unsigned="false" xsi:type="smallint"/>
+		<constraint referenceId="PRIMARY" xsi:type="primary">
+			<column name="catalogue_id"/>
+		</constraint>
+		<column length="255" name="title" nullable="true" xsi:type="varchar"/>
+		<column name="status" nullable="true" xsi:type="smallint"/>
+	</table>
+	<table comment="affinity_catalogue_cataloguecatagory Table" engine="innodb" name="affinity_catalogue_cataloguecatagory" resource="default">
+		<column comment="Entity Id" identity="true" name="cataloguecatagory_id" nullable="false" padding="6" unsigned="false" xsi:type="smallint"/>
+		<constraint referenceId="PRIMARY" xsi:type="primary">
+			<column name="cataloguecatagory_id"/>
+		</constraint>
+		<column length="255" name="name" nullable="true" xsi:type="varchar"/>
+		<column length="255" name="category" nullable="true" xsi:type="varchar"/>
+		<column length="255" name="image" nullable="true" xsi:type="varchar"/>
+		<column name="pdffile" nullable="true" xsi:type="text"/>
+		<column name="status" nullable="true" xsi:type="smallint"/>
+	</table>
+</schema>
